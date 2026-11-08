@@ -54,7 +54,7 @@ try {
     $jsPath   = Join-Path $root 'rules\claude-rule.js'
 
     if (-not $GistId) {
-        $out = gh gist create --secret --desc 'Claude Code ruleset (Shadowrocket / Clash)' `
+        $out = gh gist create --desc 'Claude Code ruleset (Shadowrocket / Clash)' `
             $listPath $yamlPath $jsPath 2>&1
         $url = ($out | Select-String -Pattern 'https://gist\.github\.com/\S+').Matches.Value
         if (-not $url) { throw "创建 gist 失败：$out" }
@@ -62,7 +62,11 @@ try {
         Set-Content -Path $idFile -Value $GistId -Encoding UTF8
         Say "[OK] 已创建 secret gist：$url" 'Green'
     } else {
-        gh gist edit $GistId $listPath $yamlPath $jsPath 2>&1 | Out-Host
+        # gh gist edit 只能交互打开编辑器，这里直接走 REST：-F key=@file 会读文件内容
+        gh api -X PATCH "/gists/$GistId" `
+            -F "files[claude-rules.list][content]=@$listPath" `
+            -F "files[claude-rules.yaml][content]=@$yamlPath" `
+            -F "files[claude-rule.js][content]=@$jsPath" | Out-Null
         Say "[OK] 已更新 gist $GistId" 'Green'
     }
 
