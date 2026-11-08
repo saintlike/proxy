@@ -72,13 +72,19 @@ try {
 
     $user = (gh api user --jq .login)
     $base = "https://gist.githubusercontent.com/$user/$GistId/raw"
+    $repoBase = "https://raw.githubusercontent.com/$user/proxy/main/rules"
     Say ''
-    Say '===== 订阅地址 =====' 'Cyan'
-    Say ("Shadowrocket / Surge RULE-SET : {0}/claude-rules.list" -f $base) 'White'
-    Say ("Clash / Stash rule-provider   : {0}/claude-rules.yaml" -f $base) 'White'
-    Say ("Shadowrocket 脚本（类型 rule）  : {0}/claude-rule.js" -f $base) 'White'
+    Say '===== 订阅地址（主：仓库 raw）=====' 'Cyan'
+    Say ("Shadowrocket / Surge RULE-SET : {0}/claude-rules.list" -f $repoBase) 'White'
+    Say ("Clash / Stash rule-provider   : {0}/claude-rules.yaml" -f $repoBase) 'White'
+    Say ("Shadowrocket 脚本（类型 rule）  : {0}/claude-rule.js" -f $repoBase) 'White'
     Say ''
-    Say ("仓库地址（私有，需登录）        : https://github.com/$user/proxy") 'DarkGray'
+    Say ("jsDelivr 加速                  : https://cdn.jsdelivr.net/gh/$user/proxy@main/rules/claude-rules.list") 'DarkGray'
+    Say '===== 备用（gist，不依赖仓库可见性）=====' 'Cyan'
+    Say ("{0}/claude-rules.list" -f $base) 'DarkGray'
+    Say ("{0}/claude-rules.yaml" -f $base) 'DarkGray'
+    Say ''
+    Say ("仓库                            : https://github.com/$user/proxy") 'DarkGray'
 }
 finally {
     Pop-Location
