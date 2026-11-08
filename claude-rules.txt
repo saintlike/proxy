@@ -1,0 +1,52 @@
+# Claude Code / Anthropic 分流规则集（源文件）
+#
+# 这一份是唯一的事实来源：所有输出格式都由 scripts/gen-ruleset.ps1 从这里生成。
+# 语法：TYPE,PATTERN[,GROUP]   —— 和 Clash / mihomo 的写法一致，最后一个字段是策略组名（生成时会被替换掉）。
+#
+# 改完记得跑：pwsh -File scripts/gen-ruleset.ps1
+
+# ---- 核心域名（DOMAIN-SUFFIX 覆盖所有子域）----
+DOMAIN-SUFFIX,anthropic.com,🤖 Claude
+DOMAIN-SUFFIX,claude.ai,🤖 Claude
+DOMAIN-SUFFIX,claude.com,🤖 Claude
+DOMAIN-SUFFIX,clau.de,🤖 Claude
+DOMAIN-SUFFIX,claudemcpclient.com,🤖 Claude
+DOMAIN-SUFFIX,claudemcpcontent.com,🤖 Claude
+DOMAIN-SUFFIX,claudeusercontent.com,🤖 Claude
+DOMAIN-SUFFIX,claude.app,🤖 Claude
+DOMAIN-SUFFIX,claude.dev,🤖 Claude
+DOMAIN-SUFFIX,claude.new,🤖 Claude
+DOMAIN-SUFFIX,claude.site,🤖 Claude
+DOMAIN-SUFFIX,claudeacademy.com,🤖 Claude
+DOMAIN-SUFFIX,claudepages.dev,🤖 Claude
+DOMAIN-SUFFIX,claudestudio.com,🤖 Claude
+DOMAIN-SUFFIX,chatbotclaude.com,🤖 Claude
+DOMAIN-SUFFIX,anthropic.team,🤖 Claude
+DOMAIN-SUFFIX,ant.dev,🤖 Claude
+DOMAIN-SUFFIX,antspace.dev,🤖 Claude
+
+# ---- 监控 / 遥测（必须和 Claude 同出口）----
+DOMAIN-SUFFIX,sentry.io,🤖 Claude
+DOMAIN-SUFFIX,statsigapi.net,🤖 Claude
+DOMAIN-SUFFIX,statsig.com,🤖 Claude
+DOMAIN-SUFFIX,sift.com,🤖 Claude
+DOMAIN-SUFFIX,siftscience.com,🤖 Claude
+DOMAIN-KEYWORD,datadog,🤖 Claude
+
+# ---- 客服 / 统计 widget ----
+DOMAIN-SUFFIX,intercom.io,🤖 Claude
+DOMAIN-SUFFIX,intercomcdn.com,🤖 Claude
+DOMAIN-SUFFIX,intercomassets.com,🤖 Claude
+
+# ---- 精确域名（都不是 anthropic.com 的子域）----
+DOMAIN,servd-anthropic-website.b-cdn.net,🤖 Claude
+DOMAIN,anthropic.com.cdn.cloudflare.net,🤖 Claude
+DOMAIN,anthropic.auth0.com,🤖 Claude
+DOMAIN,anthropic-com.ghost.io,🤖 Claude
+DOMAIN,browser-intake-us5-datadoghq.com,🤖 Claude
+DOMAIN,cdn.usefathom.com,🤖 Claude
+
+# ---- IP 段 / ASN 兜底 ----
+IP-CIDR,160.79.104.0/21,🤖 Claude,no-resolve
+IP-CIDR6,2607:6bc0::/32,🤖 Claude,no-resolve
+IP-ASN,399358,🤖 Claude,no-resolve

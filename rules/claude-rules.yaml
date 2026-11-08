@@ -1,0 +1,39 @@
+# Claude Code / Anthropic —— Clash / Stash rule-provider
+# 用法：rule-providers 里 behavior: classical，rules 里写 RULE-SET,claude,🤖 Claude
+payload:
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,claude.ai
+  - DOMAIN-SUFFIX,claude.com
+  - DOMAIN-SUFFIX,clau.de
+  - DOMAIN-SUFFIX,claudemcpclient.com
+  - DOMAIN-SUFFIX,claudemcpcontent.com
+  - DOMAIN-SUFFIX,claudeusercontent.com
+  - DOMAIN-SUFFIX,claude.app
+  - DOMAIN-SUFFIX,claude.dev
+  - DOMAIN-SUFFIX,claude.new
+  - DOMAIN-SUFFIX,claude.site
+  - DOMAIN-SUFFIX,claudeacademy.com
+  - DOMAIN-SUFFIX,claudepages.dev
+  - DOMAIN-SUFFIX,claudestudio.com
+  - DOMAIN-SUFFIX,chatbotclaude.com
+  - DOMAIN-SUFFIX,anthropic.team
+  - DOMAIN-SUFFIX,ant.dev
+  - DOMAIN-SUFFIX,antspace.dev
+  - DOMAIN-SUFFIX,sentry.io
+  - DOMAIN-SUFFIX,statsigapi.net
+  - DOMAIN-SUFFIX,statsig.com
+  - DOMAIN-SUFFIX,sift.com
+  - DOMAIN-SUFFIX,siftscience.com
+  - DOMAIN-KEYWORD,datadog
+  - DOMAIN-SUFFIX,intercom.io
+  - DOMAIN-SUFFIX,intercomcdn.com
+  - DOMAIN-SUFFIX,intercomassets.com
+  - DOMAIN,servd-anthropic-website.b-cdn.net
+  - DOMAIN,anthropic.com.cdn.cloudflare.net
+  - DOMAIN,anthropic.auth0.com
+  - DOMAIN,anthropic-com.ghost.io
+  - DOMAIN,browser-intake-us5-datadoghq.com
+  - DOMAIN,cdn.usefathom.com
+  - IP-CIDR,160.79.104.0/21,no-resolve
+  - IP-CIDR6,2607:6bc0::/32,no-resolve
+  - IP-ASN,399358,no-resolve
