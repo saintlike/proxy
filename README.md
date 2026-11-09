@@ -2,6 +2,9 @@
 
 Claude Code / Anthropic 的分流规则集。一份源文件，三种订阅格式，自动生成。
 
+改造背景、取舍理由、每一步的验证结果和踩过的坑，都写在
+[`docs/claude-routing-devlog.md`](docs/claude-routing-devlog.md)。
+
 **公开仓库，可直接订阅：**
 
 | 客户端 | 订阅地址 |
