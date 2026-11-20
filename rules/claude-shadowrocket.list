@@ -1,0 +1,41 @@
+# Shadowrocket remote RULE-SET for Claude / Anthropic
+# Usage in existing Shadowrocket [Rule] section:
+# RULE-SET,https://raw.githubusercontent.com/saintlike/proxy/main/rules/claude-shadowrocket.list,Claude
+# Requires a policy or proxy group named Claude.
+# Place the RULE-SET reference before FINAL and broader matching rules.
+DOMAIN-SUFFIX,anthropic.com,Claude
+DOMAIN-SUFFIX,claude.ai,Claude
+DOMAIN-SUFFIX,claude.com,Claude
+DOMAIN-SUFFIX,clau.de,Claude
+DOMAIN-SUFFIX,claudemcpclient.com,Claude
+DOMAIN-SUFFIX,claudemcpcontent.com,Claude
+DOMAIN-SUFFIX,claudeusercontent.com,Claude
+DOMAIN-SUFFIX,claude.app,Claude
+DOMAIN-SUFFIX,claude.dev,Claude
+DOMAIN-SUFFIX,claude.new,Claude
+DOMAIN-SUFFIX,claude.site,Claude
+DOMAIN-SUFFIX,claudeacademy.com,Claude
+DOMAIN-SUFFIX,claudepages.dev,Claude
+DOMAIN-SUFFIX,claudestudio.com,Claude
+DOMAIN-SUFFIX,chatbotclaude.com,Claude
+DOMAIN-SUFFIX,anthropic.team,Claude
+DOMAIN-SUFFIX,ant.dev,Claude
+DOMAIN-SUFFIX,antspace.dev,Claude
+DOMAIN-SUFFIX,sentry.io,Claude
+DOMAIN-SUFFIX,statsigapi.net,Claude
+DOMAIN-SUFFIX,statsig.com,Claude
+DOMAIN-SUFFIX,sift.com,Claude
+DOMAIN-SUFFIX,siftscience.com,Claude
+DOMAIN-KEYWORD,datadog,Claude
+DOMAIN-SUFFIX,intercom.io,Claude
+DOMAIN-SUFFIX,intercomcdn.com,Claude
+DOMAIN-SUFFIX,intercomassets.com,Claude
+DOMAIN,servd-anthropic-website.b-cdn.net,Claude
+DOMAIN,anthropic.com.cdn.cloudflare.net,Claude
+DOMAIN,anthropic.auth0.com,Claude
+DOMAIN,anthropic-com.ghost.io,Claude
+DOMAIN,browser-intake-us5-datadoghq.com,Claude
+DOMAIN,cdn.usefathom.com,Claude
+IP-CIDR,160.79.104.0/21,Claude,no-resolve
+IP-CIDR6,2607:6bc0::/32,Claude,no-resolve
+IP-ASN,399358,Claude,no-resolve
